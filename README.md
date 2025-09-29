@@ -56,3 +56,23 @@ Google Fact Check API key (for reliable fact checks)<br>
 "Javier Milei is the President of Argentina" → Supported ✅<br>
 "Colombia is a country in Asia" → Refuted ✅
 
+## Future Improvements
+Entity & Disambiguation Issues: Some examples returned poor evidence because Wikipedia sometimes fails to match the correct entity page.<br>
+Possible solution: Add entity linking / fuzzy matching to map claims to the right Wikipedia/Wikidata entry.
+
+Evidence Retrieval vs Usage: Sometimes relevant sources are retrieved but not used properly in the explanation, leading to wrong verdicts.<br>
+Possible solution: Improve the reasoning chain by explicitly aligning verdicts with all retrieved evidence, not just a subset.
+
+Over- or Under-Sensitivity to Evidence: In some cases, the model incorrectly marked claims as Supported due to partial overlaps (e.g., family members, related organizations).<br>
+Possible solution: Strengthen prompt rules and add post-processing filters to enforce subject consistency.
+
+Next Technical Steps:<br>
+Integrate more reliable sources: PolitiFact, Snopes, official government datasets.<br>
+Add semantic search / embedding-based retrieval for more robust evidence ranking.<br>
+Evaluate accuracy with a benchmark set of claims (precision, recall, F1).<br>
+Build a feedback loop: allow users to flag wrong verdicts and iteratively improve responses (RLHF-style).<br>
+
+
+
+
+
