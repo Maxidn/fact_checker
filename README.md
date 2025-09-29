@@ -25,14 +25,26 @@ The system uses **OpenRouter LLMs** to analyze claims and decide if they are **S
   }
 
 ## Installation
-1. Clone the repository: 
- git clone https://github.com/Maxidn/fact_checker.git <br>
- cd fact_checker
+1. Clone the repository: <br> 
+   git clone https://github.com/Maxidn/fact_checker.git <br>
+   cd fact_checker
 2. Create and activate a virtual environment:<br>
    python -m venv .venv <br>
   .venv\Scripts\activate   # On Windows <br>
    source .venv/bin/activate # On macOS/Linux <br>
-3. Install dependencies:
+3. Install dependencies: <br>
    pip install -r requirements.txt
+4. Run the Streamlit app: <br>
+  streamlit run app.py
+5. Open your browser at: http://localhost:8501
+
+## Project Structure
+fact_checker/
+│── app.py         # Streamlit front-end
+│── checker.py     # Core fact-checking logic (LLM + prompts)
+│── retriever.py   # Evidence retrieval from Wikipedia, News, Wikidata, Google Fact Check
+│── requirements.txt
+│── README.md
+
 
 
