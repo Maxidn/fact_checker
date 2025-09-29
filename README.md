@@ -26,7 +26,7 @@ The system uses **OpenRouter LLMs** to analyze claims and decide if they are **S
 
 ## Installation
 1. Clone the repository: 
- git clone https://github.com/Maxidn/fact_checker.git
+ git clone https://github.com/Maxidn/fact_checker.git <br>
  cd fact_checker
 2. Create and activate a virtual environment:
    python -m venv .venv
