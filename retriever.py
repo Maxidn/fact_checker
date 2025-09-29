@@ -4,6 +4,10 @@ from wikipedia.exceptions import DisambiguationError, PageError
 from SPARQLWrapper import SPARQLWrapper, JSON
 import requests
 import unicodedata
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 warnings.filterwarnings("ignore", category=UserWarning, module="wikipedia")
 wikipedia.set_lang("en")  # Default language
@@ -59,9 +63,10 @@ def query_wikidata(entity):
 
 # News Retrieval
 
+NEWS_API_KEY = os.getenv("NEWSAPI_KEY")
 def get_news_articles(query):
-    api_key = "bce075bd88cc498587c9f8b0cb561a74"  
-    url = f"https://newsapi.org/v2/everything?q={query}&language=en&apiKey={api_key}"
+    
+    url = f"https://newsapi.org/v2/everything?q={query}&language=en&apiKey={NEWS_API_KEY}"
     response = requests.get(url)
     data = response.json()
     return [article["title"] + ": " + article["description"] for article in data.get("articles", [])[:3]]
@@ -69,7 +74,7 @@ def get_news_articles(query):
 
 # Google Fact Check API
 
-API_KEY = "AIzaSyAIUjg3seo8eWk0y-jWVehCZpM1RoeBEGw"
+API_KEY = os.getenv("GOOGLE_FACTCHECK_API_KEY")
 BASE_URL = "https://factchecktools.googleapis.com/v1alpha1/claims:search"
 
 def get_google_fact_checks(query):
