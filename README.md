@@ -52,7 +52,7 @@ NewsAPI key (for news articles)<br>
 Google Fact Check API key (for reliable fact checks)<br>
 Store them securely and don’t hardcode in production.<br>
 
-##Example Queries
+## Example Queries
 "Pelé was a French football player" → Refuted ✅
 "Javier Milei is the President of Argentina" → Supported ✅
 "Colombia is a country in Asia" → Refuted ✅
