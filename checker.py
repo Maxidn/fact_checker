@@ -2,11 +2,15 @@ import openai
 from retriever import retrieve_all_sources
 import json
 import re
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # OpenRouter client setup
 
 client = openai.OpenAI(
-    api_key="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",
+    api_key=os.getenv("OPENROUTER_API_KEY"),
     base_url="https://openrouter.ai/api/v1"
 )
 
@@ -44,7 +48,7 @@ def filter_sources_by_entity(all_sources, entity):
 def analyze_claim_with_openrouter(claim, entity):
     # Step 1: retrieve and filter
     if not isinstance(entity, str):
-        print(f"⚠️ Received non-string entity in checker: {type(entity)}. Using claim instead.")
+        print(f" Received non-string entity in checker: {type(entity)}. Using claim instead.")
         entity = str(claim)
     all_sources = retrieve_all_sources(claim, entity)
     all_sources = filter_sources_by_entity(all_sources, entity)
