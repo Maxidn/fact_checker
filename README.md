@@ -39,11 +39,11 @@ The system uses **OpenRouter LLMs** to analyze claims and decide if they are **S
 5. Open your browser at: http://localhost:8501
 
 ## Project Structure
-fact_checker/
-│── app.py         # Streamlit front-end
-│── checker.py     # Core fact-checking logic (LLM + prompts)
-│── retriever.py   # Evidence retrieval from Wikipedia, News, Wikidata, Google Fact Check
-│── requirements.txt
+fact_checker/<br>
+│── app.py         # Streamlit front-end<br> 
+│── checker.py     # Core fact-checking logic (LLM + prompts)<br>
+│── retriever.py   # Evidence retrieval from Wikipedia, News, Wikidata, Google Fact Check<br>
+│── requirements.txt<br>
 │── README.md
 
 
