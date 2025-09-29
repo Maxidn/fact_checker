@@ -29,9 +29,9 @@ The system uses **OpenRouter LLMs** to analyze claims and decide if they are **S
  git clone https://github.com/Maxidn/fact_checker.git <br>
  cd fact_checker
 2. Create and activate a virtual environment:
-   python -m venv .venv
-  .venv\Scripts\activate   # On Windows
-   source .venv/bin/activate # On macOS/Linux
+   python -m venv .venv <br>
+  .venv\Scripts\activate   # On Windows <br>
+   source .venv/bin/activate # On macOS/Linux <br>
 3. Install dependencies:
    pip install -r requirements.txt
 
